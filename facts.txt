@@ -1,0 +1,8 @@
+2 is the smallest prime number.
+2 is the only prime number that is even.
+2 and 3 are the only consecutive prime numbers.
+All odd numbers are not prime numbers. For example, 21, 39, etc.
+No prime number greater than 5 ends in a 5.
+Sieve of Eratosthenes is one of the earliest methods of finding prime numbers.
+Prime numbers get rarer as the number gets bigger.
+There is no largest prime number.
