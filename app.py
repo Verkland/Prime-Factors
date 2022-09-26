@@ -1,5 +1,6 @@
 from tkinter import *
 from primefactors import *
+from randomfact import randomFact
 
 # Configure window
 root = Tk()
@@ -57,13 +58,13 @@ def submit():
 
 
 # Bind the enter key to the submit, nextImage, hideQuestionMark and randomFact function
-root.bind('<Return>', lambda event: [submit(), nextImage(), hideQuestionMark(), randomFact()])
+root.bind('<Return>', lambda event: [submit(), nextImage(), hideQuestionMark(), factLabel.config(text="Fun fact: " + randomFact())])
 
 # Bind the numpad enter key to the submit, nextImage, hideQuestionMark and randomFact function
-root.bind('<KP_Enter>', lambda event: [submit(), nextImage(), hideQuestionMark(), randomFact()])
+root.bind('<KP_Enter>', lambda event: [submit(), nextImage(), hideQuestionMark(), factLabel.config(text="Fun fact: " + randomFact())])
         
 # Initialize and pack a button called submitButton that executes both the submit function and the nextImage function
-submitButton = Button(root, text="Find Prime Factors", command=lambda: [submit(), nextImage(), hideQuestionMark(), randomFact()])
+submitButton = Button(root, text="Find Prime Factors", command=lambda: [submit(), nextImage(), hideQuestionMark(), factLabel.config(text="Fun fact: " + randomFact())])
 submitButton.pack(pady=10)
 
 # Initialize and pack result label
@@ -93,20 +94,6 @@ def nextImage():
     imageLabel.config(image=image)
     imageLabel.image = image
 
-
-# Initialize function to display a random fact about prime numbers
-def randomFact():
-    # Load facts from file
-    with open("facts.txt", "r") as f:
-        facts = f.readlines()
-    
-    # Pick a random fact
-    import random
-    fact = random.choice(facts)
-    
-    # Display the fact
-    factLabel.config(text="Fun fact: " + fact)
-
 # Display and pack an image of a question mark from the images directory
 questionMark = PhotoImage(file="question.png")
 questionMark = questionMark.subsample(2, 2)
@@ -118,7 +105,7 @@ def hideQuestionMark():
     questionMarkLabel.pack_forget()
 
 # Display a random fact at startup
-randomFact()
+factLabel.config(text="Fun fact: " + randomFact())
 
 # Run the app loop
 root.mainloop()
