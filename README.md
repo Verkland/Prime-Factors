@@ -14,4 +14,6 @@ The app contains three Python files:
 
 Lastly, there are a few non-code files in the project folder. There are images: one of a question mark and three happy emojis that symbolizes success. Though the happy emojis are also displayed when the user inputs the wrong kind of data, such as strings or negative numbers. I would have fixed this if I had more time. There is also a text-file with fun facts about primes and a license file that tells you that you can use the project however you would like.
 
+To run the app, you need to run "python app.py" within the project directory.
+
 If your goal is, like mine was, to learn a little bit about making GUIs in Python using Tkinter, you're in the perfect place. Fork the code and have fun with it. Then hit me up on Twitter @john_verkland
