@@ -1,5 +1,4 @@
 # Function that finds prime factors of the provided positive integer
-
 def find_prime_factors(n):
     
     i = 2
